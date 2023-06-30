@@ -11,10 +11,7 @@ const [fact, setFact] = useState("");
 
 useEffect(()=>{
  
-    Axios.get("https://excuser-three.vercel.app/v1/excuse/").then((res)=>{
-      setFact(res.data[0].excuse);
-      console.log(res)
-    })
+  generate();
 
 },[])
 
@@ -26,7 +23,7 @@ const generate = () => {
   })
 } 
 
-  return (
+  return (  
     <div className="App">
   <button onClick={generate}>Generate</button>
   <h3>{fact}</h3>   
